@@ -122,7 +122,7 @@ Example roles:
 retailer
 dispatcher
 rider
-
+```text
 ### Deliveries
 
 The `deliveries` table stores each delivery request and its current status.
@@ -158,7 +158,7 @@ users
         retailer_id              rider_id
              |                       |
              v                       v
-         Retailer                  Rider
+         Retailer                  Rider```text
 
          When a retailer creates a delivery, `rider_id` is initially `NULL`.
 
