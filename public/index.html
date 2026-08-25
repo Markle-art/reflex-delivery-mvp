@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Reflex — Delivery Coordination</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>Reflex</h1>
+
+        <p>Delivery Coordination MVP</p>
+
+    </header>
+
+
+    <main>
+
+        <!-- ROLE SELECTION -->
+
+        <section id="role-selection">
+
+            <h2>Choose your role</h2>
+
+            <div class="roles">
+
+                <button
+                    onclick="showRetailer()"
+                >
+                    Retailer
+                </button>
+
+
+                <button
+                    onclick="showDispatcher()"
+                >
+                    Dispatcher
+                </button>
+
+
+                <button
+                    onclick="showRider()"
+                >
+                    Rider
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RETAILER DASHBOARD -->
+
+        <section
+            id="retailer-dashboard"
+            class="hidden"
+        >
+
+            <h2>Retailer Dashboard</h2>
+
+            <h3>Create Delivery Request</h3>
+
+
+            <form id="delivery-form">
+
+                <label for="customer-name">
+                    Customer Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    required
+                >
+
+
+                <label for="customer-phone">
+                    Customer Phone
+                </label>
+
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    required
+                >
+
+
+                <label for="address">
+                    Delivery Address
+                </label>
+
+                <input
+                    type="text"
+                    id="address"
+                    required
+                >
+
+
+                <label for="item-description">
+                    Item Description
+                </label>
+
+                <textarea
+                    id="item-description"
+                    required
+                ></textarea>
+
+
+                <button type="submit">
+                    Create Delivery
+                </button>
+
+            </form>
+
+
+            <p id="delivery-message"></p>
+
+        </section>
+
+
+        <!-- DISPATCHER DASHBOARD -->
+
+        <section
+            id="dispatcher-dashboard"
+            class="hidden"
+        >
+
+            <h2>Dispatcher Dashboard</h2>
+
+            <h3>Open Delivery Requests</h3>
+
+
+            <div id="delivery-list">
+
+                <p>
+                    Loading deliveries...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIDER DASHBOARD -->
+
+        <section
+            id="rider-dashboard"
+            class="hidden"
+        >
+
+            <h2>Rider Dashboard</h2>
+
+            <h3>My Assigned Deliveries</h3>
+
+
+            <div id="rider-delivery-list">
+
+                <p>
+                    Loading deliveries...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- SUPABASE -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+
+    <!-- REFLEX JAVASCRIPT -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
