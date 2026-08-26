@@ -175,7 +175,7 @@ Created → Assigned → Picked Up → Delivered
 
 Reflex has three main layers:
 
-```text
+                            ```text
 Retailer / Dispatcher / Rider
             |
             v
@@ -189,7 +189,7 @@ Retailer / Dispatcher / Rider
       PostgreSQL Database
        users / deliveries
        ```
-       ## 5. Data Access
+ ## 5. Data Access
 
 The Reflex frontend communicates directly with Supabase using the Supabase JavaScript client.
 
@@ -209,9 +209,7 @@ The initial state is:
 
 ```text
 status = Created
-rider_id = NULL
-                 ```
-                 
+rider_id = NULL```
 ## 6. Architecture Trade-offs
 
 The MVP was intentionally kept small so the team could deliver and demonstrate the core delivery workflow within the available time.
