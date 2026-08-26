@@ -141,7 +141,7 @@ The deliveries table stores each delivery request and its current status.
 | updated_at | Time the delivery was last updated |
 
 ### Relationship Between Users and Deliveries
-
+```text
 A delivery connects to users using retailer_id and rider_id.
 
 users
@@ -158,17 +158,16 @@ users
              |                       |
              v                       v
          Retailer                  Rider
-
+```
 When a retailer creates a delivery, rider_id is initially NULL.
 
 When the dispatcher assigns a rider, the system stores that rider's id in rider_id.
-
 ### Delivery Status Lifecycle
 
 Created → Assigned → Picked Up → Delivered
-
+```text
 - Created — retailer has submitted the request.
 - Assigned — dispatcher has assigned a rider.
 - Picked Up — rider has collected the item.
 - Delivered — rider has completed the delivery.
-EOF
+```
