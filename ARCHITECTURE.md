@@ -99,52 +99,51 @@ We chose Supabase because the MVP requires persistent data storage and a databas
 
 This reduces development overhead while keeping the main delivery workflow functional and easy to demonstrate.
 
+cat > ARCHITECTURE.md <<'EOF'
 ## 3. Data Model
 
 Reflex uses two main tables for the MVP:
 
-- `users`
-- `deliveries`
+- users
+- deliveries
 
 ### Users
 
-The `users` table identifies the people using the system.
+The users table identifies the people using the system.
 
 | Field | Purpose |
 |---|---|
-| `id` | Unique identifier for the user |
-| `name` | User's name |
-| `role` | Identifies whether the user is a retailer, dispatcher, or rider |
+| id | Unique identifier for the user |
+| name | User's name |
+| role | Identifies whether the user is a retailer, dispatcher, or rider |
 
 Example roles:
 
-```text
 retailer
 dispatcher
 rider
-```text
+
 ### Deliveries
 
-The `deliveries` table stores each delivery request and its current status.
+The deliveries table stores each delivery request and its current status.
 
 | Field | Purpose |
 |---|---|
-| `id` | Unique identifier for the delivery |
-| `customer_name` | Customer receiving the delivery |
-| `customer_phone` | Customer's phone number |
-| `address` | Delivery destination |
-| `item_description` | Item being delivered |
-| `retailer_id` | Identifies the retailer who created the request |
-| `rider_id` | Identifies the rider assigned to the delivery |
-| `status` | Current stage of the delivery |
-| `created_at` | Time the delivery was created |
-| `updated_at` | Time the delivery was last updated |
+| id | Unique identifier for the delivery |
+| customer_name | Customer receiving the delivery |
+| customer_phone | Customer's phone number |
+| address | Delivery destination |
+| item_description | Item being delivered |
+| retailer_id | Identifies the retailer who created the request |
+| rider_id | Identifies the rider assigned to the delivery |
+| status | Current stage of the delivery |
+| created_at | Time the delivery was created |
+| updated_at | Time the delivery was last updated |
 
 ### Relationship Between Users and Deliveries
 
-A delivery connects to users using `retailer_id` and `rider_id`.
+A delivery connects to users using retailer_id and rider_id.
 
-```text
 users
   |
   |-- id
@@ -158,13 +157,18 @@ users
         retailer_id              rider_id
              |                       |
              v                       v
-         Retailer                  Rider```text
+         Retailer                  Rider
 
-         When a retailer creates a delivery, `rider_id` is initially `NULL`.
+When a retailer creates a delivery, rider_id is initially NULL.
 
-When the dispatcher assigns a rider, the system stores that rider's `id` in `rider_id`.
+When the dispatcher assigns a rider, the system stores that rider's id in rider_id.
 
 ### Delivery Status Lifecycle
 
-```text
 Created → Assigned → Picked Up → Delivered
+
+- Created — retailer has submitted the request.
+- Assigned — dispatcher has assigned a rider.
+- Picked Up — rider has collected the item.
+- Delivered — rider has completed the delivery.
+EOF
