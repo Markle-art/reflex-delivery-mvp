@@ -174,7 +174,7 @@ Created → Assigned → Picked Up → Delivered
 ## 4. System Architecture
 
 Reflex has three main layers:
-
+```markdown
 ```text
 Retailer / Dispatcher / Rider
             |
@@ -188,8 +188,8 @@ Retailer / Dispatcher / Rider
             v
       PostgreSQL Database
        users / deliveries
-       ```
- ## 5. Data Access
+ ```
+## 5. Data Access
 
 The Reflex frontend communicates directly with Supabase using the Supabase JavaScript client.
 
