@@ -171,3 +171,92 @@ Created → Assigned → Picked Up → Delivered
 - Picked Up — rider has collected the item.
 - Delivered — rider has completed the delivery.
 ```
+## 4. System Architecture
+
+Reflex has three main layers:
+
+```text
+Retailer / Dispatcher / Rider
+            |
+            v
+       Reflex Web App
+      HTML / CSS / JS
+            |
+            v
+         Supabase
+            |
+            v
+      PostgreSQL Database
+       users / deliveries
+       ```
+       ## 5. Data Access
+
+The Reflex frontend communicates directly with Supabase using the Supabase JavaScript client.
+
+The application uses database operations to:
+
+1. Create delivery requests.
+2. Retrieve open delivery requests.
+3. Assign riders to deliveries.
+4. Retrieve deliveries assigned to a rider.
+5. Update delivery status.
+
+### Delivery Creation
+
+When the retailer submits the delivery form, JavaScript sends the delivery information to the `deliveries` table.
+
+The initial state is:
+
+```text
+status = Created
+rider_id = NULL
+```
+## 6. Architecture Trade-offs
+
+The MVP was intentionally kept small so the team could deliver and demonstrate the core delivery workflow within the available time.
+
+### Trade-off 1 — Vanilla JavaScript instead of a frontend framework
+
+**Decision:**  
+We used HTML, CSS, and vanilla JavaScript instead of React or another frontend framework.
+
+**Why we accepted it:**  
+The MVP has a small number of screens and simple interactions. A framework would add setup and complexity that was not necessary for the current scope.
+
+**Cost:**  
+As the application grows, maintaining UI state and larger amounts of frontend code could become harder.
+
+**What we would change:**  
+For a larger production application, we would evaluate a frontend framework such as React to improve component reuse and state management.
+
+---
+
+### Trade-off 2 — Direct frontend access to Supabase
+
+**Decision:**  
+The frontend communicates directly with Supabase rather than using a separate custom backend API.
+
+**Why we accepted it:**  
+Supabase provides the database and API functionality required by the MVP, allowing the team to focus on the delivery workflow instead of building and maintaining a separate backend service.
+
+**Cost:**  
+More application logic is exposed in the frontend, and a larger production system would need stronger backend controls and authorization.
+
+**What we would change:**  
+For production, we would introduce a dedicated backend or server-side layer for sensitive business logic, authorization, validation, and integrations.
+
+---
+
+### Trade-off 3 — Simple rider assignment
+
+**Decision:**  
+The dispatcher manually selects a rider from the available riders.
+
+**Why we accepted it:**  
+The case study requires assignment but does not require automatic rider matching. Manual assignment is simple and easy to demonstrate.
+
+**Cost:**  
+The system does not automatically consider rider location, workload, availability, or delivery distance.
+
+**What we would change:**  
+With more time and real operational data, we would introduce rider availability and workload tracking, then evaluate an assignment algorithm based on factors such as distance and current workload.
