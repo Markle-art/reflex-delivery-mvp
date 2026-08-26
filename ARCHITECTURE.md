@@ -209,7 +209,8 @@ The initial state is:
 
 ```text
 status = Created
-rider_id = NULL```
+rider_id = NULL
+```
 ## 6. Architecture Trade-offs
 
 The MVP was intentionally kept small so the team could deliver and demonstrate the core delivery workflow within the available time.
