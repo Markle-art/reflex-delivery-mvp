@@ -14,18 +14,18 @@
 
 ## 1. Project & Product
 
-- [ ] Problem statement confirmed
-- [ ] User personas confirmed
-- [ ] Core features confirmed
-- [ ] Final user workflow confirmed
+- [x] Problem statement confirmed
+- [x] User personas confirmed
+- [x] Core features confirmed
+- [x] Final user workflow confirmed
 
 ## 2. Architecture
 
-- [ ] Architecture decided
-- [ ] Architecture diagram completed
-- [ ] Data model documented
-- [ ] Delivery status flow documented
-- [ ] Rider assignment process documented
+- [x] Architecture decided
+- [x] Architecture diagram completed
+- [x] Data model documented
+- [x] Delivery status flow documented
+- [x] Rider assignment process documented
 
 ## 3. Build
 
@@ -49,11 +49,11 @@
 
 ## 5. Trade-off Log
 
-- [ ] Trade-off #1 documented
-- [ ] Trade-off #2 documented
-- [ ] Trade-off #3 documented
-- [ ] "Acceptable because..." explanation added
-- [ ] Future improvement documented
+- [x] Trade-off #1 documented — Vanilla JavaScript instead of a frontend framework
+- [x] Trade-off #2 documented — Direct frontend access to Supabase
+- [x] Trade-off #3 documented — Simple/manual rider assignment
+- [x] "Acceptable because..." explanation added
+- [x] Future improvement documented
 
 ## 6. Presentation
 
