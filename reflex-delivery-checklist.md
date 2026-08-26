@@ -1,5 +1,17 @@
 # Reflex — Project Delivery Checklist
 
+## 👥 Team Responsibilities
+
+| Team Member | Role | Main Responsibility |
+|---|---|---|
+| Mark Kamaamia | Technical / Build Lead | Set up the project, connect components, and build the main features |
+| Mark Ochieng | Product Lead | Decide what Reflex should build and ensure it solves the right problem |
+| Shillah | Testing Lead | Test features, identify problems, and confirm fixes |
+| Grace | Experience Lead | Check that Reflex is easy and clear for users to use |
+| Maureen | Project Delivery & Lead | Coordinate documentation, slides, testing evidence, trade-offs, demo script, and final delivery |
+
+---
+
 ## 1. Project & Product
 
 - [ ] Problem statement confirmed
