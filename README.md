@@ -24,12 +24,12 @@ doesn't serve one of these, flag it as scope creep.
 
 | Persona        | Core need                                                     | Built? |
 |----------------|----------------------------------------------------------------|:------:|
-| Retailer staff | Log a delivery request (customer name, phone, address, item)   | ☐ |
-| Retailer staff | See status of requests they've logged                          | ☐ |
-| Dispatcher     | See all open (unassigned) requests                             | ☐ |
-| Dispatcher     | Assign a request to a specific rider                            | ☐ |
-| Rider          | See their own assigned deliveries only                          | ☐ |
-| Rider          | Update status: Assigned → Picked Up → Delivered                 | ☐ |
+| Retailer staff | Log a delivery request (customer name, phone, address, item)   | ☑ |
+| Retailer staff | See status of requests they've logged                          | ☑ |
+| Dispatcher     | See all open (unassigned) requests                             | ☑ |
+| Dispatcher     | Assign a request to a specific rider                            | ☑ |
+| Rider          | See their own assigned deliveries only                          | ☑ |
+| Rider          | Update status: Assigned → Picked Up → Delivered                 | ☑ |
 
 **Red-flag check** — for anything built beyond this table (e.g. real-time
 sync, scanning), ask:
