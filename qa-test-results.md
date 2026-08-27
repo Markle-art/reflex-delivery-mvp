@@ -4,7 +4,12 @@
 QA & Testing Lead
 
 ## Test Objective
-Verify that the core delivery lifecycle works correctly and that delivery records persist in Supabase as their status changes.
+Verify the core delivery workflow and confirm that delivery records persist correctly in Supabase as their status changes.
+
+## Test Environment
+- Application: Reflex Delivery MVP
+- Database: Supabase
+- Branch tested: main
 
 ## Test Data
 
@@ -14,69 +19,115 @@ Verify that the core delivery lifecycle works correctly and that delivery record
 - Item Description: Lenovo wireless keyboard and mouse
 - Rider: Brian Otieno
 
+---
+
 ## Test Results
 
 ### TC01 — Create Delivery
-**Expected:** Retailer can create a delivery containing customer name, phone number, address, and item description.
+
+**Expected:**  
+The retailer should be able to create a delivery request containing the customer's name, phone number, address, and item description.
 
 **Result:** PASS
 
-**Evidence:** Delivery record was created successfully and appeared in the Supabase `deliveries` table.
+**Evidence:**  
+The delivery was successfully created and a corresponding record was stored in the Supabase `deliveries` table.
 
 ---
 
 ### TC02 — Assign Rider
-**Expected:** Dispatcher can assign a rider and the delivery status changes to `Assigned`.
 
-**Result:** PASS
+**Expected:**  
+The dispatcher should be able to assign a rider and the delivery status should change to `Assigned`.
 
-**Evidence:** Daniel Onyango's Supabase record contained a rider ID and:
-`status = Assigned`
+**Result:** PASS — database persistence
 
-The `updated_at` value also changed, confirming that the assignment was persisted.
+**Evidence:**  
+The Supabase record for Daniel Onyango showed:
 
-**Observation:** After assignment, the delivery disappeared from the dispatcher UI. The Supabase record remained available, so this appears to be a UI/filtering issue rather than data loss.
+- `rider_id` populated
+- `status = Assigned`
+- `updated_at` updated
+- Delivery record remained in the `deliveries` table
+
+**UI Observation:**  
+After assigning the rider, the delivery disappeared from the dispatcher view even though the Supabase record remained available.
+
+**Status:** Needs developer review and retest.
 
 ---
 
 ### TC03 — Mark as Picked Up
-**Expected:** Rider can change the delivery status to `Picked Up` and the delivery remains stored.
 
-**Result:** PASS
+**Expected:**  
+The rider should be able to change the delivery status to `Picked Up`, and the delivery record should remain stored.
 
-**Evidence:** A delivery record tested in Supabase remained present with:
+**Result:** PASS — database persistence
+
+**Evidence:**  
+A delivery record tested in Supabase remained present after pickup with:
+
 `status = Picked Up`
+
+**Note:**  
+The pickup workflow should be retested after the latest developer changes.
 
 ---
 
 ### TC04 — Mark as Delivered
-**Expected:** Rider can mark the delivery as `Delivered` and the record remains stored.
 
-**Result:** PASS
+**Expected:**  
+The rider should be able to change the delivery status to `Delivered`, and the delivery record should remain stored.
 
-**Evidence:** Daniel Onyango's Supabase record remained present with:
+**Result:** PASS — database persistence
+
+**Evidence:**  
+Daniel Onyango's delivery remained in the Supabase `deliveries` table with:
+
 `status = Delivered`
 
 The `updated_at` value was also updated.
 
-**Observation:** The delivery disappears from the active UI after being marked Delivered. The database record remains available.
+**UI Observation:**  
+The delivery disappeared from the active dashboard after being marked as Delivered.
+
+**Status:** Needs clarification on whether completed deliveries are intentionally removed from the active view or should remain accessible through a Delivered/Completed history view.
 
 ---
 
-## Key QA Finding
+## Overall QA Finding
 
-The core delivery status updates are being persisted in Supabase:
+The Supabase database successfully persists delivery records through the delivery lifecycle:
 
 **Open → Assigned → Picked Up → Delivered**
 
-The main issue observed during testing is that deliveries disappear from the active dashboard after certain status changes even though their records remain in Supabase.
+Testing confirmed that status changes do not delete the delivery records from Supabase.
 
-This indicates a possible dashboard filtering/display issue rather than deletion of delivery records.
+The main issue observed was that deliveries disappeared from the application interface after certain status changes, despite remaining in the database.
 
-## QA Recommendation
+This suggests that the remaining issue is related to dashboard filtering or display logic rather than database persistence.
 
-Verify that the dashboard displays deliveries according to their current status and that completed deliveries remain accessible through an appropriate Delivered/Completed view or history.
+---
 
-## Evidence
+## Developer Follow-Up
 
-Supabase verification confirmed that delivery records remain stored after status changes and retain their customer, retailer, rider, and timestamp information.
+The developer has been informed about the dashboard behavior after rider assignment and is working on a correction.
+
+After the correction, QA will retest:
+
+1. Create delivery
+2. Assign rider
+3. Refresh dispatcher dashboard
+4. Confirm assigned delivery remains visible
+5. Mark as Picked Up
+6. Refresh and confirm delivery remains visible in the appropriate view
+7. Mark as Delivered
+8. Confirm the completed delivery remains accessible through the appropriate view/history
+
+---
+
+## QA Conclusion
+
+The core delivery data is being persisted successfully in Supabase.
+
+The remaining validation is focused on ensuring that the application UI correctly reflects delivery status changes and provides appropriate visibility of active and completed deliveries.
