@@ -29,23 +29,23 @@
 
 ## 3. Build
 
-- [ ] Retailer can create delivery request
-- [ ] Dispatcher can view open requests
-- [ ] Dispatcher can assign rider
-- [ ] Rider can view assigned deliveries
-- [ ] Rider can update delivery status
-- [ ] Retailer can view delivery status
-- [ ] Sync/real-time functionality confirmed
-- [ ] Scanning functionality confirmed or documented as planned
+- [x] Retailer can create delivery request
+- [x] Dispatcher can view open requests
+- [x] Dispatcher can assign rider
+- [x] Rider can view assigned deliveries
+- [x] Rider can update delivery status
+- [x] Retailer can view delivery status
+- [x] Sync/real-time functionality confirmed
+- [x] Scanning functionality confirmed or documented as planned
 
 ## 4. Testing Evidence
 
-- [ ] Test cases received from Shillah
-- [ ] Test results documented
-- [ ] Screenshots/evidence collected
-- [ ] Bugs documented
-- [ ] Fixed bugs retested
-- [ ] Final testing results confirmed
+- [x] Test cases received from Shillah
+- [x] Test results documented
+- [x] Screenshots/evidence collected
+- [x] Bugs documented
+- [x] Fixed bugs retested
+- [x] Final testing results confirmed
 
 ## 5. Trade-off Log
 
@@ -57,43 +57,43 @@
 
 ## 6. Presentation
 
-- [ ] Problem slide completed
-- [ ] Solution slide completed
-- [ ] Architecture slide completed
-- [ ] User flow slide completed
-- [ ] Testing slide completed
-- [ ] Trade-offs slide completed
-- [ ] Roadmap slide completed
-- [ ] Final takeaway slide completed
-- [ ] One key takeaway per slide checked
+- [x] Problem slide completed
+- [x] Solution slide completed
+- [x] Architecture slide completed
+- [x] User flow slide completed
+- [x] Testing slide completed
+- [x] Trade-offs slide completed
+- [x] Roadmap slide completed
+- [x] Final takeaway slide completed
+- [x] One key takeaway per slide checked
 
 ## 7. Demo
 
-- [ ] Demo scenario selected
-- [ ] Retailer flow prepared
-- [ ] Dispatcher flow prepared
-- [ ] Rider flow prepared
-- [ ] Status update demonstrated
-- [ ] Demo script completed
+- [x] Demo scenario selected
+- [x] Retailer flow prepared
+- [x] Dispatcher flow prepared
+- [x] Rider flow prepared
+- [x] Status update demonstrated
+- [x] Demo script completed
 
 ## 8. Rehearsal
 
-- [ ] Dry run #1 completed
-- [ ] Dry run #1 timing recorded
-- [ ] Problems identified
-- [ ] Presentation revised
-- [ ] Dry run #2 completed
-- [ ] Dry run #2 timing recorded
-- [ ] Team handoffs rehearsed
-- [ ] Panel questions practiced
+- [x] Dry run #1 completed
+- [x] Dry run #1 timing recorded
+- [x] Problems identified
+- [x] Presentation revised
+- [x] Dry run #2 completed
+- [x] Dry run #2 timing recorded
+- [x] Team handoffs rehearsed
+- [x] Panel questions practiced
 
 ## 9. Final Submission
 
-- [ ] Build/design ready
-- [ ] Slides finalized
-- [ ] Testing evidence included
-- [ ] Trade-off log completed
-- [ ] Demo script completed
-- [ ] Timing logs included
-- [ ] Final files checked
-- [ ] Submission completed
+- [x] Build/design ready
+- [x] Slides finalized
+- [x] Testing evidence included
+- [x] Trade-off log completed
+- [x] Demo script completed
+- [x] Timing logs included
+- [x] Final files checked
+- [x] Submission completed
