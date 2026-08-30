@@ -90,7 +90,6 @@
 ## 9. Final Submission
 
 - [x] Build/design ready
-- [x] Slides finalized
 - [x] Testing evidence included
 - [x] Trade-off log completed
 - [x] Demo script completed
